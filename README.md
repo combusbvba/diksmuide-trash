@@ -1,1 +1,1 @@
-# plugin-Veurne-trash
+# plugin-diksmuide-trash
