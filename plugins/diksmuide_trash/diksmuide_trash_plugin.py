@@ -18,7 +18,7 @@
 from framework.plugin_loader import Plugin, get_plugin
 from plugins.diksmuide_trash.admin import StatsHandler
 from plugins.diksmuide_trash.cron import BroadcastNotificationsHandler
-from plugins.diksmuide_net_trash.rogerthat_callbacks import system_api_call
+from plugins.diksmuide_trash.rogerthat_callbacks import system_api_call
 from framework.utils.plugins import Handler
 from plugins.rogerthat_api.rogerthat_api_plugin import RogerthatApiPlugin
 

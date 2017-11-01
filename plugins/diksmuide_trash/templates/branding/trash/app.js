@@ -227,16 +227,26 @@ var initOverview = function() {
                 collection.activity.image_url = "images/grofvuil.png";
             } else if (collection.activity.number == 21) {
                 collection.activity.image_url = "images/huisvuil.png";
+            } else if (collection.activity.number == 22) {
+                collection.activity.image_url = "images/huisvuil.png";
             } else if (collection.activity.number == 23) {
                 collection.activity.image_url = "images/kerstboom.png";
             } else if (collection.activity.number == 27) {
                 collection.activity.image_url = "images/papier.png";
+            } else if (collection.activity.number == 37) {
+                collection.activity.image_url = "images/papier.png";
             } else if (collection.activity.number == 28) {
+                collection.activity.image_url = "images/pmd.png";
+            } else if (collection.activity.number == 38) {
                 collection.activity.image_url = "images/pmd.png";
             } else if (collection.activity.number == 29) {
                 collection.activity.image_url = "images/tuin.png";
             } else if (collection.activity.number == 30) {
                 collection.activity.image_url = "images/textiel.png";
+            } else if (collection.activity.number == 31) {
+                collection.activity.image_url = "images/metaal.png";
+            } else if (collection.activity.number == 32) {
+                collection.activity.image_url = "images/gft.png";
             } else {
                 collection.activity.image_url = "images/unknown.png";
             }

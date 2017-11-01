@@ -65,7 +65,7 @@ def get_api_streets(sik):
     URL_POST = 'http://www.ivvo.be/ahah-gemeente-exposed-callback'
 
     sdata = {}
-    sdata['field_gemeente_value'] = 'Veurne'
+    sdata['field_gemeente_value'] = 'Diksmuide'
     sdata['field_straat_value'] = ''
     sdata['field_straatnrvan_value'] = ''
     sdata['field_straatnrtot_value'] = ''
@@ -73,6 +73,8 @@ def get_api_streets(sik):
     sdata = urlencode(sdata)
 
     result = urlfetch.fetch(url=URL_POST, deadline=55, payload=sdata, method=2)
+
+    logging.info(result)
 
     if result.status_code != 200:
         raise Exception("Failed when loading get_api_streets")
@@ -112,12 +114,13 @@ def get_api_activities(sik):
 
     lijstAFVAL = []
     lijstAFVAL.append([7 , 'Grofvuil op afroep'])
-    lijstAFVAL.append([21 , 'Restafval'])
+    lijstAFVAL.append([21 , 'Restafval Zone 1'])
+    lijstAFVAL.append([22 , 'Restafval Zone 2'])
     lijstAFVAL.append([23 , 'Kerstboom'])
     lijstAFVAL.append([27 , 'Papier en karton Zone 1'])
     lijstAFVAL.append([37 , 'Papier en karton Zone 2'])
-    lijstAFVAL.append([47 , 'Papier en karton Zone 3'])
-    lijstAFVAL.append([28 , 'PMD'])
+    lijstAFVAL.append([28 , 'PMD Zone 1'])
+    lijstAFVAL.append([38 , 'PMD Zone 2'])
     lijstAFVAL.append([29 , 'Snoeihout op afroep'])
     lijstAFVAL.append([30 , 'Textiel'])
     lijstAFVAL.append([31 , 'Oude metalen op afroep'])
@@ -142,7 +145,7 @@ def get_api_collections(sik, street_name, house_number, house_bus, time_from):
     args["van"] = u"%s/%s/%s" % (d_from.day, d_from.month, d_from.year)
     args["tem"] = u"31/12/%s" % d_from.year
     BASIS_URL = 'http://www.ivvo.be/icallink/?'
-    f = { 'field_gemeente_value' : 'Veurne', 'field_straat_value' : street_name.encode('utf-8'), 'field_straatnrvan_value' : house_number}
+    f = { 'field_gemeente_value' : 'Diksmuide', 'field_straat_value' : street_name.encode('utf-8'), 'field_straatnrvan_value' : house_number}
 
     REQ_URL = BASIS_URL + urlencode(f)
 
@@ -167,12 +170,13 @@ def get_api_collections(sik, street_name, house_number, house_bus, time_from):
         summaryID = 33
         lijst1.append(str(date.dt))
         if str(summary)=="Grofvuil op afroep": summaryID = 7
-        if str(summary)=="Restafval": summaryID=21
+        if str(summary)=="Restafval Zone 1": summaryID=21
+        if str(summary)=="Restafval Zone 2": summaryID=22
         if str(summary)=="Kerstboom": summaryID=23
         if str(summary)=="Papier en karton Zone 1": summaryID=27
         if str(summary)=="Papier en karton Zone 2": summaryID=37
-        if str(summary)=="Papier en karton Zone 3": summaryID=47
-        if str(summary)=="PMD": summaryID=28
+        if str(summary)=="PMD Zone 1": summaryID=28
+        if str(summary)=="PMD Zone 2": summaryID=38
         if str(summary)=="Snoeihout op afroep": summaryID=29
         if str(summary)=="Textiel": summaryID=33
         if str(summary)=="Oude metalen op afroep": summaryID=31

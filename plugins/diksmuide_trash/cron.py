@@ -25,8 +25,8 @@ from google.appengine.ext import ndb
 from google.appengine.ext.ndb.query import QueryOptions
 from plugins.diksmuide_trash.localizer import translate_key
 from plugins.diksmuide_trash.models import UserLocation
-from plugins.diksmuide_net_trash.plugin_bizz import get_api_collections, update_user_data, send_collection_message
-from plugins.diksmuide_net_trash.plugin_utils import today
+from plugins.diksmuide_trash.plugin_bizz import get_api_collections, update_user_data, send_collection_message
+from plugins.diksmuide_trash.plugin_utils import today
 from plugins.rogerthat_api.models.settings import RogerthatSettings
 from framework.utils import now
 import webapp2
