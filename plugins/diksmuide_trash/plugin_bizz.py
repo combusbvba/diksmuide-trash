@@ -125,6 +125,7 @@ def get_api_activities(sik):
     lijstAFVAL.append([30 , 'Textiel'])
     lijstAFVAL.append([31 , 'Oude metalen op afroep'])
     lijstAFVAL.append([32 , 'GFT'])
+    lijstAFVAL.append([42 , 'GFT HORECA'])
     lijstCompleet = [{'nr': nummers, 's': beschrijvingAfval} for nummers, beschrijvingAfval in lijstAFVAL]
 
     json_response = json.loads(json.dumps(lijstCompleet))
@@ -181,6 +182,7 @@ def get_api_collections(sik, street_name, house_number, house_bus, time_from):
         if str(summary)=="Textiel": summaryID=33
         if str(summary)=="Oude metalen op afroep": summaryID=31
         if str(summary)=="GFT": summaryID=32
+        if str(summary)=="GFT HORECA": summaryID=42
         lijst2.append(summaryID)
     lijstCompleet = [{'d': datum, 'a': afval} for datum, afval in zip(lijst1, lijst2)]
 
